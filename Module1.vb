@@ -130,21 +130,7 @@
                 Salida()
                 Return
             Case 1
-                Do
-                    Try
-                        ' Si va odo bien
-                        tablamultiplicar.CargarValor()
-                        verdad = True
-
-                    Catch ex As Exception
-                        ' si hay algun error
-                        Console.SetCursorPosition(10, 7)
-                        Console.Write(ex.Message)
-                    End Try
-
-                Loop Until verdad = True
-
-                ' Aqui meter nuevo codigo
+                verdad = CargaMultiplacion(verdad, tablamultiplicar)
             Case 2
                 'Aqui metes nevo codigo
 
@@ -154,6 +140,32 @@
                 OpcionErronea()
         End Select
     End Sub
+
+    Private Function CargaMultiplacion(verdad As Boolean, tablamultiplicar As TablaMultiplicar) As Boolean
+        Borrado()
+        Marco()
+
+        Do
+            Try
+                ' Si va odo bien
+                tablamultiplicar.CargarValor()
+                verdad = True
+
+            Catch ex As Exception
+                ' si hay algun error
+                Console.SetCursorPosition(10, 7)
+                Console.Write(ex.Message)
+            End Try
+
+        Loop Until verdad = True
+        Console.ReadKey()
+        Borrado()
+
+        Ejercicio19ManualVisualBasic2019Jorge()
+
+        ' Aqui meter nuevo codigo
+        Return verdad
+    End Function
 
     Private Sub OpcionErronea()
         'En  este Metodo controlamos si los numeros introduciodos no son reconocido por el select Case anterior 
