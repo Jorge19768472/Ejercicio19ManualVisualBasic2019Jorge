@@ -132,7 +132,15 @@
             Case 1
                 verdad = CargaMultiplacion(verdad, tablamultiplicar)
             Case 2
-                'Aqui metes nevo codigo
+                Do
+                    Try
+
+                        verdad = True
+                    Catch ex As Exception
+                        verdad = False
+                    End Try
+                Loop Until verdad = True
+
 
             Case Else
 
