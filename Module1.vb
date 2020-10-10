@@ -90,7 +90,7 @@
             Console.SetCursorPosition(Columna, 0)
             Console.Write("*")
             Temporizador()
-            
+
         Next
         For Fila = 0 To 21
             Console.SetCursorPosition(80, Fila)
