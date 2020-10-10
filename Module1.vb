@@ -34,7 +34,34 @@
 
         End Sub
     End Class
+    Public Class PruevaVector2
+        Private alturas(4) As Single
+        Private promedio As Single
+        Public Sub Cargar()
+            Dim f As Integer
+            For f = 0 To 4
+                Console.SetCursorPosition(10, 5)
+                Console.Write("Ingrese la altura de la persona ( " & f & " ) :")
+                alturas(f) = Console.ReadLine()
 
+            Next
+        End Sub
+        Public Sub CalcularPromedio()
+            Dim suma As Single
+            suma = 0
+            Dim f As Integer
+            For f = 0 To 4
+                suma = suma + alturas(f)
+
+
+            Next
+            promedio = suma / 5
+            Console.SetCursorPosition(10, 7)
+            Console.Write(" El promedio de la alrutas es: ")
+
+        End Sub
+
+    End Class
     Sub Main()
         ' Plantilla Ejercicio19ManualVisualBasic2019conl un menu
         ' con un marco que podras ver como se crear mas rapido lento
