@@ -132,27 +132,17 @@
             Case 1
                 verdad = CargaMultiplacion(verdad, tablamultiplicar)
             Case 2
-
-                Borrado()
-                Marco()
-
                 Do
                     Try
-
 
 
 
                         Borrado()
 
                         Ejercicio19ManualVisualBasic2019Jorge()
+
                         verdad = True
-
-
-
                     Catch ex As Exception
-                        Console.SetCursorPosition(10, 19)
-                        Console.Write(ex.Message)
-
                         verdad = False
                     End Try
                 Loop Until verdad = True
@@ -163,7 +153,6 @@
                 'Una opcion para Controlar  las ociones no aceptadas
                 OpcionErronea()
         End Select
-
     End Sub
 
     Private Function CargaMultiplacion(verdad As Boolean, tablamultiplicar As TablaMultiplicar) As Boolean
