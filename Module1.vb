@@ -135,14 +135,16 @@
                 Do
                     Try
 
-
-
                         Borrado()
+                        Console.SetCursorPosition(10, 7)
 
                         Ejercicio19ManualVisualBasic2019Jorge()
 
                         verdad = True
                     Catch ex As Exception
+                        Console.SetCursorPosition(10, 19)
+                        Console.Write(ex.Message)
+
                         verdad = False
                     End Try
                 Loop Until verdad = True
