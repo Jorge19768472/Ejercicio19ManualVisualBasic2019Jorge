@@ -161,7 +161,7 @@
         Console.SetCursorPosition(5, 7)
         Console.Write("1.- Mutiplicacion por clase")
         Console.SetCursorPosition(5, 9)
-        Console.Write("2. -Opcion 2")
+        Console.Write("2. -Codigo CLae y propiedades")
         'Añadrir mas opciones segun vuestras necesidades
 
         Dim Opcion As Integer
