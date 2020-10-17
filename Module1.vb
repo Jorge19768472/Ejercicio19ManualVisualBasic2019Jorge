@@ -34,13 +34,117 @@
 
         End Sub
     End Class
+    Public Class Persona
+        Private nombre As String
+        Private edad As Integer
+        Private altura As Double
+        Private peso As Double
+        Public Sub New(nombre As String, edad As Integer, altura As Double, peso As Double)
+            Me.nombre = nombre
+            Me.edad = edad
+            Me.altura = altura
+            Me.peso = peso
 
+        End Sub
+        Public Property PropNombre() As String
+            Get
+                Return nombre
+            End Get
+            Set(value As String)
+                nombre = value
+
+            End Set
+        End Property
+        Public Property ProEdad() As Integer
+            Get
+                Return edad
+
+            End Get
+            Set(value As Integer)
+                edad = value
+
+            End Set
+        End Property
+        Public Property ProAltura() As Double
+            Get
+                Return altura
+
+            End Get
+            Set(value As Double)
+                altura = value
+
+            End Set
+        End Property
+        Public Property ProPeso() As Double
+            Get
+                Return peso
+
+            End Get
+            Set(value As Double)
+                peso = value
+
+            End Set
+        End Property
+
+    End Class
+    Public Class Alumno
+        Inherits Persona
+
+        Private nota As Integer
+
+        Public Sub New(Nombre As String, edad As Integer, altura As Double, peso As Double, nota As Integer)
+            MyBase.New(Nombre, edad, altura, peso)
+            Me.nota = nota
+
+
+        End Sub
+        Public Property Pronota As Integer
+            Get
+                Return nota
+
+            End Get
+            Set(value As Integer)
+                nota = value
+
+            End Set
+        End Property
+
+
+
+
+    End Class
+    Public Class Profesor
+        Inherits Persona
+
+        Private asignatura As String
+        Public Sub New(nombre As String, edad As Integer, altura As Double, peso As Double, asignatura As String)
+            MyBase.New(nombre, edad, altura, peso)
+            Me.asignatura = asignatura
+
+        End Sub
+
+        Public Property ProAsignatura As String
+            Get
+                Return asignatura
+
+            End Get
+            Set(value As String)
+
+                asignatura = value
+
+            End Set
+        End Property
+
+
+    End Class
     Sub Main()
         ' Plantilla Ejercicio19ManualVisualBasic2019conl un menu
         ' con un marco que podras ver como se crear mas rapido lento
-        ' segundo aumentes o bajes el valor del for en el metodo Temprizador' progrmama viene de esta web.
+        ' segundo aumentes o bajes el valor del for en el metodo Temprizador
+        ' progrmama viene de esta web.
 
         'http://www.tutorialesprogramacionya.com/visualbasicya/detalleconcepto.php?punto=14&codigo=14&inicio=0
+        ' https://www.discoduroderoer.es/herencia-en-visual-basic-net/
         Ejercicio19ManualVisualBasic2019Jorge()
 
 
@@ -132,30 +236,56 @@
             Case 1
                 verdad = CargaMultiplacion(verdad, tablamultiplicar)
             Case 2
-                Do
-                    Try
-
-                        Borrado()
-                        Console.SetCursorPosition(10, 7)
-
-                        Ejercicio19ManualVisualBasic2019Jorge()
-
-                        verdad = True
-                    Catch ex As Exception
-                        Console.SetCursorPosition(10, 19)
-                        Console.Write(ex.Message)
-
-                        verdad = False
-                    End Try
-                Loop Until verdad = True
-
-
+                verdad = ClaseyPropiedades()
             Case Else
 
                 'Una opcion para Controlar  las ociones no aceptadas
                 OpcionErronea()
         End Select
     End Sub
+
+    Private Function ClaseyPropiedades() As Boolean
+        Dim verdad As Boolean
+
+        Do
+            Try
+
+                Borrado()
+                Marco()
+
+                Dim pro As New Profesor("Profesor", 30, 1.7, 70, "Matematicas")
+
+                Dim alum1 As New Alumno("Alumno1", 12, 1.5, 40, 7)
+
+                Dim alum2 As New Alumno("Alumno2", 12, 1.5, 40, 7)
+
+                Console.SetCursorPosition(10, 7)
+                Console.WriteLine("Altura del proferor: " & pro.ProAltura)
+
+                Console.SetCursorPosition(10, 9)
+                Console.WriteLine("Edad Del alumnor: " & alum1.ProEdad)
+                Console.SetCursorPosition(10, 11)
+                Console.WriteLine("Edad Del alumnor: " & alum2.ProEdad)
+                Console.ReadKey()
+                Borrado()
+
+
+
+                verdad = True
+
+                Ejercicio19ManualVisualBasic2019Jorge()
+
+
+            Catch ex As Exception
+                Console.SetCursorPosition(10, 19)
+                Console.Write(ex.Message)
+
+                verdad = False
+            End Try
+        Loop Until verdad = True
+
+        Return verdad
+    End Function
 
     Private Function CargaMultiplacion(verdad As Boolean, tablamultiplicar As TablaMultiplicar) As Boolean
         Borrado()
