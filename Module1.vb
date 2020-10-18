@@ -16,8 +16,6 @@
                     ' es distinto a -1
                     Calcular(valor)
 
-
-
                 End If
             Loop While valor <> -1
         End Sub
@@ -28,7 +26,6 @@
                 Tabla = f * v
                 Console.SetCursorPosition(10, 5 + f)
                 Console.WriteLine(v & " * " & f & " = " & Tabla)
-
             Next
 
 
@@ -142,7 +139,7 @@
         ' con un marco que podras ver como se crear mas rapido lento
         ' segundo aumentes o bajes el valor del for en el metodo Temprizador
         ' progrmama viene de esta web.
-
+        ' prorgama de clases y prpriedades en el programa
         'http://www.tutorialesprogramacionya.com/visualbasicya/detalleconcepto.php?punto=14&codigo=14&inicio=0
         ' https://www.discoduroderoer.es/herencia-en-visual-basic-net/
         Ejercicio19ManualVisualBasic2019Jorge()
